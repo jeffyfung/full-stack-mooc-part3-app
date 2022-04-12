@@ -10,6 +10,7 @@ app.listen(process.env.PORT || 3001, () => {
 
 morgan.token('reqBody', (req, res) => req.method === 'POST' ? JSON.stringify(req.body) : '');
 
+app.use(cors());
 app.use(express.json());
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :reqBody'));
 
