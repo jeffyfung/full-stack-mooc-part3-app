@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const {v4: uuidv4} = require('uuid');
 const morgan = require('morgan');
+const cors = require('cors');
 require('dotenv').config();
 
 app.listen(process.env.PORT || 3001, () => {
