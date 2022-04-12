@@ -38,9 +38,9 @@ let persons = [
   }
 ];
 
-app.get('/', (req, res) => {
-  res.json({ content: 'hi'});
-});
+// app.get('/', (req, res) => {
+//   res.json({ content: 'hi'});
+// });
 
 app.get('/api/persons', (req, res) => {
   res.json(persons);
