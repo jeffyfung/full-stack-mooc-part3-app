@@ -34,10 +34,10 @@ app.get('/api/persons/:id', (req, res) => {
   RemoteStorageContact.findById(req.params.id).then(contact => res.json(contact));
 });
 
-app.delete('/api/persons/:id', (req, res) => {
-  // let targetId = Number(req.params.id);
-  // persons = persons.filter(p => p.id !== targetId);
-  res.status(204).end();
+app.delete('/api/persons/:id', (req, res, next) => {
+  RemoteStorageContact.findByIdAndRemove(req.params.id)
+    .then(deletedContact => res.status(204).end())
+    .catch(next);
 })
 
 app.post('/api/persons', (req, res) => {

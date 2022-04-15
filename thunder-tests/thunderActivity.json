@@ -59,5 +59,33 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "0587b51b-0f4e-4155-a01a-a3936b7558ba",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:{{PORT}}/api/persons/62594a851459701f204f45b2",
+    "url": "http://localhost:{{PORT}}/api/persons/62594a851459701f204f45b2",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2022-04-15T15:49:21.576Z",
+    "modified": "2022-04-15T15:49:34.147Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "a1bdd68b-eef9-49bd-87ee-00ec95df3d11",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:{{PORT}}/api/persons/62594a9f1459701f204f45b4",
+    "url": "http://localhost:{{PORT}}/api/persons/62594a9f1459701f204f45b4",
+    "method": "DELETE",
+    "sortNum": 0,
+    "created": "2022-04-15T15:50:12.638Z",
+    "modified": "2022-04-15T15:50:12.659Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]
