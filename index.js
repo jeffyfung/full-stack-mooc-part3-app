@@ -16,20 +16,16 @@ app.use(express.static('build'))
 app.use(express.json());
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :reqBody'));
 
-app.get('/', (req, res) => {
-  res.json({ content: 'hi'});
-});
-
 app.get('/api/persons', (req, res, next) => {
   RemoteStorageContact.find({})
     .then(contacts => res.json(contacts))
     .catch(next);
 });
 
-app.get('/info', (req, res) => {
-  let html = `<p>Phonebook has info for ${persons.length} people</p>`
-    + `<p>${new Date()}</p>`;
-  res.send(html);
+app.get('/info', (req, res, next) => {
+  RemoteStorageContact.countDocuments({})
+    .then(count => res.send(`<p>Phonebook has info for ${count} people</p> <p>${new Date()}</p>`))
+    .catch(next);
 });
 
 app.get('/api/persons/:id', (req, res, next) => {
