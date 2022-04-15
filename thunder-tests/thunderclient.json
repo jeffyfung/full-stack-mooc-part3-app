@@ -31,5 +31,24 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "9ab5dbf7-c405-4248-9fd9-d0443b77519b",
+    "colId": "85122e58-3192-4e53-b9bb-1f4c4688ed07",
+    "containerId": "",
+    "name": "insert new contact",
+    "url": "http://localhost:{{PORT}}/api/persons",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-04-15T10:33:34.823Z",
+    "modified": "2022-04-15T10:33:34.823Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"bowie\",\n    \"number\": \"101010\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]

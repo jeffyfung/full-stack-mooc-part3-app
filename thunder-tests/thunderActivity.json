@@ -18,13 +18,18 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3001/api/persons",
-    "url": "http://localhost:3001/api/persons",
-    "method": "GET",
+    "url": "http://localhost:{{PORT}}/api/persons",
+    "method": "POST",
     "sortNum": 0,
     "created": "2022-04-10T14:23:45.458Z",
-    "modified": "2022-04-10T14:23:45.480Z",
+    "modified": "2022-04-15T10:33:57.194Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"tay\",\n    \"number\": \"000\"\n}",
+      "form": []
+    },
     "tests": []
   },
   {
@@ -36,7 +41,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-04-10T14:27:32.117Z",
-    "modified": "2022-04-10T14:43:02.207Z",
+    "modified": "2022-04-15T10:38:49.808Z",
     "headers": [],
     "params": [],
     "tests": []
