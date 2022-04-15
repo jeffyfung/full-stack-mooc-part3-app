@@ -22,22 +22,4 @@ phonebookSchema.set('toJSON', {
   }
 });
 
-// const contact = new Contact({
-//   name: process.argv[3],
-//   number: process.argv[4]
-// });
-
-// contact.save().then(res => {
-//   console.log(`added ${process.argv[3]} number ${process.argv[4]} to phonebook`);
-//   mongoose.connection.close()
-// });
-
-// Contact.find({}).then(res => {
-//   console.log('displaying docs in contacts');
-//   res.forEach(contact => {
-//     console.log(`${contact.name} ${contact.number}`);
-//   })
-//   mongoose.connection.close();
-// });
-
 module.exports = mongoose.model('Contact', phonebookSchema);
