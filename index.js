@@ -1,9 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const {v4: uuidv4} = require('uuid');
 const morgan = require('morgan');
 const cors = require('cors');
-require('dotenv').config();
+const RemoteStorageContact = require('./models/mongo');
 
 app.listen(process.env.PORT || 3001, () => {
   console.log('Server is started on 127.0.0.1:'+ (process.env.PORT || 3001))
@@ -44,7 +45,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/persons', (req, res) => {
-  res.json(persons);
+  RemoteStorageContact.find({}).then(contacts => res.json(contacts));
 });
 
 app.get('/info', (req, res) => {
@@ -54,13 +55,7 @@ app.get('/info', (req, res) => {
 });
 
 app.get('/api/persons/:id', (req, res) => {
-  let targetId = Number(req.params.id);
-  let targetEntry = persons.find(p => p.id === targetId);
-  if (targetEntry) {
-    res.json(targetEntry);
-  } else {
-    res.status(404).end();
-  }
+  RemoteStorageContact.findById(req.params.id).then(contact => res.json(contact));
 });
 
 app.delete('/api/persons/:id', (req, res) => {
