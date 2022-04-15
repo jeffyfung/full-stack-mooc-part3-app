@@ -38,6 +38,17 @@ app.get('/api/persons/:id', (req, res, next) => {
     .catch(next);
 });
 
+app.put('/api/persons/:id', (req, res, next) => {
+  let contact = {
+    name: req.body.name,
+    number: req.body.number
+  };
+
+  RemoteStorageContact.findByIdAndUpdate(req.params.id, contact, { new: true })
+    .then(newContact => res.json(newContact))
+    .catch(next);
+})
+
 app.delete('/api/persons/:id', (req, res, next) => {
   RemoteStorageContact.findByIdAndRemove(req.params.id)
     .then(deletedContact => res.status(204).end())
@@ -59,7 +70,7 @@ app.post('/api/persons', (req, res, next) => {
     name: req.body.name,
     number: req.body.number,
   });
-  
+
   contact.save()
     .then(newContact => res.json(newContact))
     .catch(next);
