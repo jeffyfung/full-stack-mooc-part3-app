@@ -41,12 +41,12 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-04-15T10:33:34.823Z",
-    "modified": "2022-04-15T10:33:34.823Z",
+    "modified": "2022-04-16T15:40:31.086Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"name\": \"bowie\",\n    \"number\": \"101010\"\n}",
+      "raw": "{\n    \"name\": \"fr\",\n    \"number\": \"0\"\n}",
       "form": []
     },
     "tests": []

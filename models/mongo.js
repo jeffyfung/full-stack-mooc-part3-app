@@ -10,7 +10,10 @@ mongoose.connect(url)
 .catch(err => { console.log('error connecting to MongoDB:', err.message) })
 
 const phonebookSchema = new mongoose.Schema({
-  name: String,
+  name: {
+    type: String,
+    minLength: [3, 'name must have at least 3 characters']
+  },
   number: String
 });
 

@@ -40,16 +40,16 @@ app.put('/api/persons/:id', (req, res, next) => {
     number: req.body.number
   };
 
-  RemoteStorageContact.findByIdAndUpdate(req.params.id, contact, { new: true })
+  RemoteStorageContact.findByIdAndUpdate(req.params.id, contact, { new: true, runValidators: true, context: 'query' })
     .then(newContact => res.json(newContact))
     .catch(next);
-})
+});
 
 app.delete('/api/persons/:id', (req, res, next) => {
   RemoteStorageContact.findByIdAndRemove(req.params.id)
     .then(deletedContact => res.status(204).end())
     .catch(next);
-})
+});
 
 app.post('/api/persons', (req, res, next) => {
   if (req.body.name == undefined || req.body.number == undefined) {
@@ -69,8 +69,11 @@ app.post('/api/persons', (req, res, next) => {
 
   contact.save()
     .then(newContact => res.json(newContact))
-    .catch(next);
-})
+    .catch(err => {
+      console.error(err);
+      res.status(400).send(err.message);
+    });
+});
 
 const errHandler = (err, req, res, next) => {
   console.error(err);
