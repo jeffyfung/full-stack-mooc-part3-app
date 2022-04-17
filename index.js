@@ -57,11 +57,6 @@ app.post('/api/persons', (req, res, next) => {
     return;
   }
 
-  // if (persons.find(p => p.name === req.body.name)) {
-  //   res.status(500).json({ error: "name must be unique"});
-  //   return;
-  // }
-
   let contact = new RemoteStorageContact({
     name: req.body.name,
     number: req.body.number,

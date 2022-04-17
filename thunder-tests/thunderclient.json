@@ -41,14 +41,28 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-04-15T10:33:34.823Z",
-    "modified": "2022-04-16T15:40:31.086Z",
+    "modified": "2022-04-17T05:48:33.814Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"name\": \"fr\",\n    \"number\": \"0\"\n}",
+      "raw": "{\n    \"name\": \"bowie3\",\n    \"number\": \"-04-33561\"\n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "58befebd-6919-41a1-929c-4020d6ffab18",
+    "colId": "85122e58-3192-4e53-b9bb-1f4c4688ed07",
+    "containerId": "",
+    "name": "delete entry",
+    "url": "http://localhost:{{PORT}}/api/persons/625af630a2f8e85bae38cf00",
+    "method": "DELETE",
+    "sortNum": 40000,
+    "created": "2022-04-17T06:02:42.365Z",
+    "modified": "2022-04-17T06:02:42.365Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]
