@@ -6,8 +6,8 @@ const url = process.env.DB_URI
 
 console.log('connecting to DB...');
 mongoose.connect(url)
-.then(res => { console.log('connected to MongoDB') })
-.catch(err => { console.log('error connecting to MongoDB:', err.message) })
+  .then( () => { console.log('connected to MongoDB'); })
+  .catch(err => { console.log('error connecting to MongoDB:', err.message); });
 
 const phonebookSchema = new mongoose.Schema({
   name: {
